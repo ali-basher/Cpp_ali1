@@ -10,17 +10,20 @@ Q1: Write a program that solve the following math series using functions
 #include <iostream>
 #include<math.h>
 using namespace std;
-int fact(int n) {
+int fact(int n) 
+{
 	if ((n == 0) || (n == 1))
 		return 1;
 	else
 		return n * fact(n - 1);
 }
-int main() {
-	int n;
-	float sum = 0, z, m;
-	cin >> n;
-	for (int i = 1; i <= n; i++)
+void reslt()
+{
+	int number;
+	double z, sum = 0.0, m;
+	cout << "Enter any number : ";
+	cin >> number;
+	for (int i = 1; i <= number; i++)
 	{
 		m = fact(i);
 		z = 1 / m;
@@ -33,8 +36,12 @@ int main() {
 			sum = sum + z;
 		}
 	}
-	cout << sum << "\n";
-	//	cout << "Factorial of " << n << " is " << m;
+	cout << "Y = " << sum << "\n";
+}
+int main() 
+{
+	reslt();
 	return 0;
 }
+
 `````
