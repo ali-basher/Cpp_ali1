@@ -2,7 +2,8 @@
 
 ```` C++
 كود في لغة C++ لحساب المعادلة الاتية: 
-Q1: Write a program that solve the following math series using functions 𝑦=1−1/2!+ 1/3!− 1/4!+⋯… 1/𝑛!
+Q1: Write a program that solve the following math series using functions 
+𝑦=1−1/2!+ 1/3!− 1/4!+⋯… 1/𝑛!
 
 `````
 ````c++
