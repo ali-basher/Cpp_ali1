@@ -344,6 +344,10 @@ int main()
 
 >> <img src="fib.JPG" alt="solve">
 
+> <div align="right">صورة مهمة تشرح قانون الكود لايجاد رقم فيبوناتشي<div>
+
+>> <img src="CodeLaw.JPG" alt="solve">
+
 ----
 ```C++
 Q9: Write a program using function to calculate the factorial of an integer entered by the user in the main function
