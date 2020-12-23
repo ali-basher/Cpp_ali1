@@ -121,3 +121,38 @@ your age in Hours :176016
 your age in minutes :10560960
 your age in Seconds :633657600
 `````
+----
+> Q/ Write a program to calculate the area of a rectangle and a sequare and Using function overloading ?
+````C++
+#include<iostream>
+using namespace std;
+
+float area(float z)
+{
+	float q;
+	q = z * z;
+	return q;
+}
+
+float area(float x, float y)
+{
+	float q;
+	q = x * y;
+	return q;
+}
+
+int main()
+{
+	float  x, y, z;
+	cout << "Enter x : ";
+	cin >> x;
+	cout << "Enter y : ";
+	cin >> y;
+	cout << "Enter z : ";
+	cin >> z;
+	cout << "area sequare : "<<area(z) << "\n";
+	cout << "area rectangle : " << area(x, y) << "\n";
+	return 0;
+}
+````
+-----
