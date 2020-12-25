@@ -156,3 +156,43 @@ int main()
 }
 ````
 -----
+> Q/ write c++ program using function to find  a value in an array and return the index of its location
+````C++
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+void Verify_array_elements(int x)
+{
+    int y = 0, z, a[7];
+    for (int j = 0; j < 7; j++)
+    {
+        cout << "Enter the value of the array whose index is a[ " << j << " ] : ";
+        cin >> a[j];
+    }
+
+    for (int i = 0; i < 7; i++)
+    {
+        if (x == a[i])
+        {
+            cout << "the number " << x << " index for it : " << i << "\n";
+            y++;
+        }
+    }
+
+    if (y == 0)
+        cout << "Not found in the array \n";
+}
+
+int main()
+{
+    int x;
+
+    cout << "Enter any number : ";
+    cin >> x;
+    
+    Verify_array_elements(x);
+
+    return 0;
+}
+````
