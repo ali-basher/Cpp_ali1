@@ -11,8 +11,10 @@ private:
     int oopDeg;
     
 public:
+    static int counter;
     student()
     {
+        cout<<"\nThe student number "<<counter<<"\n";
         cout<<"Enter the name : ";
         cin>>name;
         cout<<"Enter the age : ";
@@ -21,7 +23,7 @@ public:
         cin>>laval;
         cout<<"Enter the oop degree : ";
         cin>>oopDeg;
-        
+        counter++;
     }
 
     void print()
@@ -42,6 +44,7 @@ public:
     
 };
 
+int student::counter = 1;
 
 int main()
 {
