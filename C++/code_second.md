@@ -196,3 +196,69 @@ int main()
     return 0;
 }
 ````
+-----
+> Q/ write oop programing student class with data members (name,age,address,deg1,deg2,deg3,deg4) and calculat the avareg?
+````C++
+#include<iostream>
+using namespace std;
+
+class student{
+private:
+    string *name, *address;
+    float *age,*deg1,*deg2,*deg3,*deg4;
+public:
+    student()
+    {
+        name=new string ;
+        address=new string ;
+        age=new float ;
+        deg1=new float ;
+        deg2=new float ;
+        deg3=new float ;
+        deg4=new float ;
+
+        cout<<"Enter name student : ";
+        cin>>*name;
+        cout<<"enter address for student : ";
+        cin>>*address;
+        cout<<"Enter age for student : ";
+        cin>>*age;
+        cout<<"Enter deg1 : ";
+        cin>>*deg1;
+        cout<<"Enter deg2 : ";
+        cin>>*deg2;
+        cout<<"Enter deg3 : ";
+        cin>>*deg3;
+        cout<<"Enter deg4 : ";
+        cin>>*deg4;
+    }
+    ~student()
+    {
+        delete name;
+        delete address;
+        delete age;
+        delete deg1;
+        delete deg2;
+        delete deg3;
+        delete deg4;
+    }
+    void average()
+    {
+        float avg;
+        avg=(*deg1 + *deg2 + *deg3 + *deg4)/4;
+        cout<<"The average : "<<avg<<"\n";
+
+    }
+
+};
+
+int main()
+{
+    student s1;
+    s1.average();
+
+
+    return 0;
+}
+
+````
