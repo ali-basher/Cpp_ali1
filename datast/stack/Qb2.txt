@@ -1,0 +1,118 @@
+write program to split the content of stack S into two stacks one for numbers larger than 50 and the other for numbers smaller or equal to 50.
+
+--------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+const int size = 10;
+
+void push(int stack[size], int &top)
+{
+    int value;
+    if(top == size-1)
+        cout<<"stack is full, insertion is not possible\n";
+
+    else
+    {
+        cout<<"Enter any number : ";
+        cin>>value;
+
+        ++top;
+        stack[top] = value;
+    }
+}
+
+void pop(int stack[size], int &top)
+{
+    int value;
+    if(top == -1)
+        cout<<"stack is empty, deletion is not possible\n";
+    else
+    {
+        value = stack[top];
+        --top;
+    }
+}
+
+void print(int stack[size], int top)
+{
+    int i;
+    if(top == -1)
+        cout<<"stack is empty, printing is not possible\n";
+    else
+    {
+        for(i=0; i<=top; i++)
+        {
+            cout<<stack[i]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+
+void larg(int stack[size], int top, int larager[size])
+{
+	int i, j=0;
+
+	for(i=0; i<=top; i++)
+	{
+		if(stack[i] > 50)
+		{
+			larager[j] = stack[i];
+			cout<<larager[j]<<"\t";
+			++j;
+		}
+	}
+	cout<<"\n";
+}
+
+void small(int stack[size], int top, int smaller[size])
+{
+	int i, j=0;
+
+	for(i=0; i<=top; i++)
+	{
+		if(stack[i] <= 50)
+		{
+			smaller[j] = stack[i];
+			cout<<smaller[j]<<"\t";
+			++j;
+		}
+	}
+	cout<<"\n";
+}
+
+
+int main()
+{
+    int stack[size],larager[size], smaller[size];
+    int top = -1;
+    int x;
+
+    for( ; x != 6; )
+	{
+		cout<<"1- push \n";
+		cout<<"2- pop \n";
+		cout<<"3- print \n";
+		cout<<"4-stack for numbers larger than 50 \n";
+		cout<<"5-stack for numbers smaller or equal to 50 \n";
+        cout<<"6-Exit\n";
+
+		cout<<"Enter your choice : ";
+		cin>>x;
+
+		switch (x)
+			{
+				case 1:push(stack, top); break;
+				case 2:pop(stack, top); break;
+				case 3:print(stack, top); break;
+				case 4:larg(stack, top, larager);break;
+				case 5:small(stack, top, smaller);break;
+				default:cout<<"Error\n";
+			}
+
+	}
+
+    return 0;
+}

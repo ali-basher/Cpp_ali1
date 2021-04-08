@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+const int size = 8;
+
+void print(int stack[size], int top)
+{
+    int i;
+    if(top == -1)
+        cout<<"stack is empty, printing is not possible\n";
+    else
+    {
+        for(i=0; i<=top; i++)
+        {
+            cout<<stack[i]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+
+int main()
+{
+    int stack[size]={3,5,8,4,9,7};
+    int top = 5;
+
+    print(stack, top);
+
+
+    return 0;
+}

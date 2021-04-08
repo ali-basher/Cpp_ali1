@@ -1,0 +1,86 @@
+Q2:) You have stack of size (10) contain (5) element , Write program segment with draw to:
+a) Add (7) elements to stack ?
+b) convert even values to another empty stack of size (6)?
+c) print the final state for new stack ?
+
+-----------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+const int size = 10;
+
+void push(int stack[size], int &top)
+{
+    int value, x, i;
+
+    for(i=0; i<=6; i++)
+	{
+		if(top == size-1)
+		{
+			x=stack[top];
+			--top;
+			cout<<"Enter any number : ";
+			cin>>value;
+
+			++top;
+			stack[top] = value;
+		}
+
+		else
+		{
+			cout<<"Enter any number : ";
+			cin>>value;
+
+			++top;
+			stack[top] = value;
+		}
+	}
+}
+
+
+void print(int stack[size], int top)
+{
+    int i;
+    if(top == -1)
+        cout<<"stack is empty, printing is not possible\n";
+    else
+    {
+        for(i=0; i<=top; i++)
+        {
+            cout<<stack[i]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+
+void con_stack_even(int stack[size], int a[10], int top)
+{
+    int i, j=0;
+    cout<<"Even values from the stack : \n";
+    for(i=0;i<=top;i++)
+    {
+        if(stack[i]%2==0)
+        {
+            a[j]=stack[i];
+            cout<<a[j]<<"   ";
+            ++j;
+        }
+    }
+    cout<<"\n";
+}
+
+
+int main()
+{
+    int stack[size]={1,2,3,4,5};
+    int top = 4;
+    int a[6];
+
+    push(stack, top);
+    print(stack, top);
+    con_stack_even(stack, a, top);
+
+    return 0;
+}

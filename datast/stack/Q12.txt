@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+const int size = 7;
+
+void push(int stack[size], int &top)
+{
+    int value;
+    int i;
+
+    for(i=0; i<=5; i++)
+		{
+			cout<<"Enter any number : ";
+			cin>>value;
+
+			++top;
+			stack[top]=value;
+		}
+}
+
+void print(int stack[size], int top)
+{
+    int i;
+    if(top == -1)
+        cout<<"stack is empty, printing is not possible\n";
+    else
+    {
+        for(i=0; i<=top; i++)
+        {
+            cout<<stack[i]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+
+int main()
+{
+    int stack[size];
+    int top = -1;
+
+    push(stack, top);
+    print(stack, top);
+
+
+    return 0;
+}
