@@ -1,0 +1,80 @@
+#include <iostream>
+
+using namespace std;
+
+const int size1 = 8;
+const int size2 = 5;
+
+void con_stack(int stack[size2], int &top, int q[size1], int &f, int &r)
+{
+	int i, value;
+
+	for(i = 0; i <= r; i++)
+	{
+		if(q[i] > 100)
+		{
+			if(top == size1 - 1)
+			{
+				value = stack[top];
+				--top;
+
+				++top;
+				stack[top] = q[i];
+			}
+
+			else
+			{
+				++top;
+				stack[top] = q[i];
+			}
+		}
+	}
+}
+
+void prints(int stack[size2], int top)
+{
+	int i;
+	cout<<"stack larger 100 : \n";
+	for(i = 0; i <= top; i++)
+		cout<<stack[i]<<"\t";
+	cout<<"\n";
+}
+
+void printq(int q[size1], int f, int r)
+{
+	int i;
+	cout<<"Queue elements : \n";
+
+	if(f == -1)
+		cout<<"Queue is empty nothing to print !!";
+
+	else
+	{
+		for(i = r; i >= f; i--)
+		{
+			cout<<q[i]<<"\t";
+		}
+	}
+}
+
+
+int main()
+{
+	int q[size1]={100, 203, 99, 409, 523, 611, 79};
+	int stack[size2];
+	int top = -1;
+	int f = 0;
+	int r = 6;
+
+	printq(q, f, r);
+	cout<<"\n";
+
+	con_stack(stack, top, q, f, r);
+	cout<<"\n";
+
+	prints(stack, top);
+	cout<<"\n";
+
+
+    return 0;
+}

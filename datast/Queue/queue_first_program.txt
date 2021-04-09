@@ -1,0 +1,94 @@
+#include <iostream>
+
+using namespace std;
+
+const int size = 6;
+
+void insertion(int q[size], int &f, int &r)
+{
+	int value;
+	if(r == size - 1)
+		cout<<"Queue is full !! Insertion is not possible.\n";
+
+	else
+	{
+		cout<<"Enter any number : ";
+		cin>>value;
+
+		++r;
+		q[r] = value;
+	}
+
+	if(f == -1)
+		f = 0;
+}
+
+void deletion(int q[size], int &f, int &r)
+{
+	int value;
+	if(f == -1)
+		cout<<"Under flow !! Queue is empty deletion is not possible.\n";
+
+	else if(f == r)
+	{
+		value = q[f];
+
+		f = -1;
+		r = -1;
+	}
+
+	else
+	{
+		value = q[f];
+		++f;
+	}
+}
+
+void print(int q[size], int f, int r)
+{
+	int i;
+
+	if(f == -1)
+		cout<<"Queue is empty nothing to print !!";
+
+	else
+	{
+		for(i = r; i >= f; i--)
+		{
+			cout<<q[i]<<"\t";
+		}
+	}
+}
+
+
+int main()
+{
+	int q[size];
+	int f = -1;
+	int r = -1;
+	int x;
+
+	for( ; x != 4; )
+	{
+		cout<<"1- insertion\n";
+		cout<<"2- deletion\n";
+		cout<<"3- print\n";
+		cout<<"4- exit\n";
+
+		cout<<"Enter your choice : ";
+		cin>>x;
+		cout<<"\n";
+
+		switch (x)
+		{
+			case 1 :insertion(q, f, r); break;
+			case 2 :deletion(q, f, r); break;
+			case 3 :print(q, f, r); break;
+			default:cout<<"Error\n";
+		}
+		cout<<"\n";
+	}
+
+
+    return 0;
+}

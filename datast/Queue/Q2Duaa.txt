@@ -1,0 +1,116 @@
+#include <iostream>
+
+using namespace std;
+
+int const size = 10;
+
+void insertion(int q[size], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i = 0; i <= 9; i++)
+	{
+		if(r == size-1)
+		cout<<"Queue is empty, insertion is not possible\n";
+
+		else
+		{
+			cout<<"Enter any number for queue : ";
+			cin>>value;
+
+			++r;
+			q[r] = value;
+		}
+
+		if(f == -1)
+			f = 0;
+		}
+}
+
+void printq(int q[size], int f, int r)
+{
+	int i;
+
+	cout<<"Queue  is :\n";
+	if(r == -1)
+		cout<<"Queue  is empty\n";
+	else
+	{
+		for(i = r; i >= f; i--)
+			cout<<q[i]<<"\t";
+	}
+}
+
+void con_qu_st_arr(int q[size], int stack[size], int array_even[size], int &top, int &f, int &r, int &x)
+{
+	int i, j = 0;
+
+	for(i = r; i >= f; i--)
+	{
+		if(q[i] %2 == 0)
+		{
+			array_even[j] = q[i];
+			++j;
+			++x;
+		}
+		else
+		{
+			++top;
+			stack[top] = q[i];
+		}
+	}
+}
+
+void printst(int stack[size], int top)
+{
+	int i;
+	cout<<"stack ood  is :\n";
+
+	if(top == -1)
+		cout<<"Stack is empty \n";
+
+	else
+	{
+		for(i = 0; i <= top; i++)
+			cout<<stack[i]<<"\t";
+	}
+}
+
+void printarr(int array_even[size], int x)
+{
+	int i;
+	cout<<"array even  is :\n";
+
+	for(i = 0; i < x; i++)
+		cout<<array_even[i]<<"\t";
+
+}
+
+int main()
+{
+	int q[size];
+	int array_even[size];
+	int stack[size];
+
+	int top = -1;
+	int f = -1;
+	int r = -1;
+	int x = 0;
+
+	insertion(q, f, r);
+	cout<<"\n";
+
+	printq(q, f, r);
+	cout<<"\n";
+
+	con_qu_st_arr(q, stack, array_even, top, f, r, x);
+	cout<<"\n";
+
+	printarr(array_even, x);
+	cout<<"\n";
+
+	printst(stack, top);
+
+    return 0;
+}

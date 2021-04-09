@@ -1,0 +1,103 @@
+لديك stack  حجمه 5  المطلوب تحويل القيم الى stack ثاني يحتوي على 3  قيم علما ان حجمه 10 .
+
+Q/You have a stack of size 5 to convert the values into a second stack of 3 values, with a size of 10.
+
+------------------------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+const int size1 = 5;
+const int size2 = 10;
+
+void push(int stack[size1], int &top)
+{
+    int value;
+    if(top == size1-1)
+        cout<<"stack is full, insertion is not possible\n";
+
+    else
+    {
+        cout<<"Enter any number : ";
+        cin>>value;
+
+        ++top;
+        stack[top] = value;
+    }
+}
+
+void print(int stack[size1], int top)
+{
+    int i;
+    if(top == -1)
+        cout<<"stack is empty, printing is not possible\n";
+    else
+    {
+        for(i=0; i<=top; i++)
+        {
+            cout<<stack[i]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+}
+
+void pushst2(int stack[size1], int stack2[size2], int &top, int &top2)
+{
+	int i;
+
+	for(i=0; i<=top; i++)
+	{
+		++top2;
+		stack2[top2] = stack[i];
+	}
+}
+
+void print2(int stack2[size2], int top2)
+{
+    int i;
+    if(top2 == -1)
+        cout<<"stack is empty, printing is not possible\n";
+    else
+    {
+        for(i=0; i<=top2; i++)
+        {
+            cout<<stack2[i]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+}
+
+int main()
+{
+    int stack[size1], stack2[size2]={1,2,3};
+    int top = -1;
+    int top2 = 2;
+    int x;
+
+    for( ; x != 5; )
+	{
+		cout<<"1- push \n";
+		cout<<"2- print \n";
+		cout<<"3-convert to stack 2 \n";
+		cout<<"4-print stack 2 \n";
+        cout<<"5-Exit\n";
+
+		cout<<"Enter your choice : ";
+		cin>>x;
+
+		switch (x)
+			{
+				case 1:push(stack, top); break;
+				case 2:print(stack, top); break;
+				case 3:pushst2(stack, stack2, top, top2);break;
+				case 4:print2(stack2, top2);break;
+				default:cout<<"Error\n";
+			}
+
+	}
+
+    return 0;
+}

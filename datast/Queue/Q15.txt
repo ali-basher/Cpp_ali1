@@ -1,0 +1,92 @@
+#include <iostream>
+
+using namespace std;
+
+const int size = 8;
+
+void insertion(int q[size], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i = 0; i<=5; i++)
+	{
+		if(r == size - 1)
+		cout<<"Queue is full !! Insertion is not possible.\n";
+
+		else
+		{
+			cout<<"Enter any number : ";
+			cin>>value;
+
+			++r;
+			q[r] = value;
+		}
+
+		if(f == -1)
+			f = 0;
+	}
+
+}
+
+void deletion(int q[size], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i = 0; i <= 2; i++)
+	{
+		if(f == -1)
+		cout<<"Under flow !! Queue is empty deletion is not possible.\n";
+
+		else if(f == r)
+		{
+			value = q[f];
+
+			f = -1;
+			r = -1;
+		}
+
+		else
+		{
+			value = q[f];
+			++f;
+		}
+	}
+}
+
+void print(int q[size], int f, int r)
+{
+	int i;
+
+	if(f == -1)
+		cout<<"Queue is empty nothing to print !!";
+
+	else
+	{
+		for(i = r; i >= f; i--)
+		{
+			cout<<q[i]<<"\t";
+		}
+	}
+}
+
+
+int main()
+{
+	int q[size];
+	int f = -1;
+	int r = -1;
+
+	insertion(q, f, r);
+	cout<<"\n";
+	print(q, f, r);
+	cout<<"\n";
+	deletion(q, f, r);
+	cout<<"\n";
+	print(q, f, r);
+	cout<<"\n";
+
+
+    return 0;
+}

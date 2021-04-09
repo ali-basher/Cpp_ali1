@@ -1,0 +1,107 @@
+Q5/ Given Queue of size (5) with (5) elements, find the factorial 
+of each value of this queue and put it in an empty stack of size (5) ?
+
+-------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int const size = 5;
+
+
+void insertion(int q[size], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i = 0; i <= 4; i++)
+	{
+		if(r == size-1)
+		cout<<"Queue is empty, insertion is not possible\n";
+
+		else
+		{
+			cout<<"Enter any number for queue : ";
+			cin>>value;
+
+			++r;
+			q[r] = value;
+		}
+
+		if(f == -1)
+			f = 0;
+		}
+}
+
+
+void print(int q[size], int f, int r)
+{
+	int value;
+	int i;
+
+	if(r == -1)
+		cout<<"Queue  is empty\n";
+	else
+	{
+		for(i = r; i >= f; i--)
+			cout<<q[i]<<"\t";
+	}
+}
+
+void qu_st_fc(int q[size], int stack[size], int &top, int &f, int &r)
+{
+	int i, j, x;
+	int fact = 1;
+
+	for(i = r; i >= f; i--)
+	{
+		fact = 1;
+		x = q[i];
+		for(j = 1; j <= x; j++)
+		{
+			fact = fact * j;
+		}
+
+		++top;
+		stack[top] = fact;
+
+	}
+}
+
+void printst(int stack[size], int top)
+{
+	int i;
+
+	if(top == -1)
+		cout<<"Stack is empty !!\n";
+	else
+	{
+		for(i = 0; i <= top; i++)
+			cout<<stack[i]<<"\t";
+	}
+
+}
+
+
+int main()
+{
+	int q[size];
+	int stack[size];
+
+	int top = -1;
+	int f = -1;
+	int r = -1;
+
+	insertion(q, f, r);
+	cout<<"\n Queue\n";
+
+	print(q, f, r);
+	cout<<"\n stack\n";
+
+	qu_st_fc(q, stack, top, f, r);
+	printst(stack, top);
+
+
+    return 0;
+}
