@@ -1,0 +1,167 @@
+Q4/ Given a circlular queue of size (10) contains (10) elements, 
+write coplete program to convert the even values to any array of size(10).
+
+-----------------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int const size = 10;
+int j = 0;
+
+void insertion(int cq[size], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i = 0; i <= 9; i++)
+	{
+		if(r == size - 1 && f == 0)
+			cout<<"C Queue full !! insertion is not possible\n";
+
+		else if(f - r == 1)
+			cout<<"C Queue full !! insertion is not possible\n";
+
+		else if(r == size - 1 && f > 0)
+		{
+			cout<<"Enter any value : ";
+			cin>>value;
+
+			r = 0;
+			cq[r] = value;
+		}
+
+		else
+		{
+			cout<<"Enter any value : ";
+			cin>>value;
+
+			++r;
+			cq[r] = value;
+		}
+
+		if(f == -1)
+			f = 0;
+	}
+}
+
+
+int con_Cq_arr(int cq[size], int arr_even[size], int &f, int &r)
+{
+	int value, i;
+
+	if(f == -1)
+		cout<<"C Queue is empty\n";
+
+	else if(f == r)
+		{
+			if(cq[i] % 2 == 0)
+			{
+				value = cq[r];
+				f = -1;
+				r = -1;
+
+				arr_even[j] = value;
+				++j;
+			}
+		}
+
+	else if(r > f)
+	{
+		for(i = f; i <= r; i++)
+		{
+			if(cq[i] % 2 == 0)
+			{
+				value = cq[i];
+
+				arr_even[j] = value;
+				++j;
+			}
+
+		}
+	}
+
+	else
+	{
+		for(i = f; i <= size - 1; i++)
+		{
+			if(cq[i] % 2 == 0)
+			{
+				value = cq[i];
+
+				arr_even[j] = value;
+				++j;
+			}
+		}
+		for(i = 0; i <= r; i++)
+		{
+			if(cq[i] % 2 == 0)
+			{
+				value = cq[i];
+
+				arr_even[j] = value;
+				++j;
+			}
+		}
+	}
+
+	for(i = 0; i < j; i++)
+		cout<<arr_even[i]<<"\t";
+	cout<<"\n";
+}
+
+
+void print(int cq[size], int &f, int &r)
+{
+	int i;
+
+	if(f == -1)
+		cout<<"C Queue is empty\n";
+
+	else if(f == r)
+		cout<<cq[r]<<"\n";
+
+	else if(r > f)
+	{
+		for(i = f; i <= r; i++)
+		{
+			cout<<cq[i]<<"\t";
+		}
+		cout<<"\n";
+	}
+
+	else
+	{
+		for(i = f; i <= size - 1; i++)
+		{
+			cout<<cq[i]<<"\t";
+		}
+		for(i = 0; i <= r; i++)
+		{
+			cout<<cq[i]<<"\t";
+		}
+		cout<<"\n";
+	}
+
+}
+
+
+int main()
+{
+	int cq[size];
+	int arr_even[size];
+	int r = -1;
+	int f = -1;
+
+	insertion(cq, f, r);
+	cout<<endl;
+	print(cq, f, r);
+	cout<<endl;
+	con_Cq_arr(cq, arr_even, f, r);
+	cout<<endl;
+	print(cq, f, r);
+
+
+    return 0;
+}

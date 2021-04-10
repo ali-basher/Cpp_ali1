@@ -1,0 +1,79 @@
+Q3:) Having a circular Queue of size (10) , F=5 ,R=2 ,write program segment with draw to:
+a) convert all values of circular queue to empty queue of size (7)?
+b) Delete (3) elements from new queue?
+c) Print the final state of Queue?
+
+------------------------------------------------------------------------------
+
+a/
+
+#include <iostream>
+
+using namespace std;
+
+int const size1 = 10;
+int const size2 = 7;
+
+void con_C_Q(int cq1[size1], int &f1, int &r1, int cq2[size2], int &f2, int &r2)
+{
+	int i;
+	int value;
+
+	for(i = 0; i <= r1; i++)
+	{
+		++r2;
+		cq2[r2] = cq1[i];
+	}
+
+	if(f2 == -1)
+		f2 = 0;
+
+	for(i = f1; i <= size1 - 1; i++)
+	{
+		if(r2 == 6&& f2 == 0)
+		{
+			value = cq2[f2];
+			++f2;
+
+			r2 = 0;
+			cq2[r2] = cq1[i];
+
+		}
+		else
+		{
+			++r2;
+			cq2[r2] = cq1[i];
+		}
+	}
+}
+
+void printQ2(int cq2[size2], int f2, int r2)
+{
+	int i;
+
+	for(i = f2; i <= size2 - 1; i++)
+		cout<<cq2[i]<<"\t";
+
+	for(i = 0; i == r2; i++)
+		cout<<cq2[i]<<"\t";
+	cout<<"\n";
+}
+
+int main()
+{
+	int cq1[size1] = {1, 2, 3, NULL, NULL, 6, 7, 8, 9, 10};
+	int cq2[size2];
+
+	int f1 = 5;
+	int r1 = 2;
+	int f2 = -1;
+	int r2 = -1;
+
+	cout<<"\n";
+	con_C_Q(cq1, f1, r1, cq2, f2, r2);
+	cout<<"\n";
+	printQ2(cq2, f2, r2);
+	cout<<"\n";
+
+    return 0;
+}

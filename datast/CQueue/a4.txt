@@ -1,0 +1,114 @@
+Q1/ Given a circular queue of size (10) contain (10) elements, Convert the positive values to empty stack of size (10), and the negative values to empty Queue of size (10) , final print the stack and the queue ? 
+
+---------------------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int const size = 10;
+
+
+void insertio(int cq[size], int &f1, int &r1)
+{
+	int value;
+	int i;
+
+	for(i =0; i <= 9; i++)
+	{
+		cout<<"Enter any number : ";
+		cin>>value;
+
+			++r1;
+			cq[r1] = value;
+	}
+
+	if(f1 == -1)
+		f1 = 0;
+}
+
+void co_s(int cq[size], int stack[size], int &top, int &f1, int &r1, int queue[size], int &f2, int &r2)
+{
+	int i;
+	int value;
+
+	for(i = f1; i <= r1; i++)
+	{
+		if(cq[i] >= 0)
+		{
+			++top;
+			stack[top] = cq[i];
+		}
+
+		else
+		{
+			++r2;
+			queue[r2] = cq[i];
+
+			if(f2 == -1)
+				f2 = 0;
+		}
+	}
+
+}
+
+void printcQ(int cq[size], int f1, int r1)
+{
+	int i;
+
+	for(i = f1; i <= r1; i++)
+	{
+		cout<<cq[i]<<"\t";
+	}
+}
+
+void prints(int stack[size], int top)
+{
+	int i;
+
+	for(i = 0; i <= top; i++)
+	{
+		cout<<stack[i]<<"\t";
+	}
+}
+
+void printq(int queue[size], int f2, int r2)
+{
+	int i;
+
+	for(i = f2; i <= r2; i++)
+	{
+		cout<<queue[i]<<"\t";
+	}
+}
+
+
+int main()
+{
+	int cq[size];
+	int stack[size];
+	int queue[size];
+
+	int f1 = -1;
+	int r1 = -1;
+	int f2 = -1;
+	int r2 = -1;
+	int top = -1;
+
+	insertio(cq, f1, r1);
+	cout<<"\n";
+
+	co_s(cq, stack, top, f1, r1, queue, f2, r2);
+	cout<<"\nC Queue :\n";
+
+	printcQ(cq, f1, r1);
+	cout<<"\nStack :\n";
+
+	prints(stack, top);
+	cout<<"\nQueue :\n";
+
+	printq(queue, f2, r2);
+	cout<<"\n";
+
+    return 0;
+}

@@ -1,0 +1,125 @@
+#include <iostream>
+
+using namespace std;
+
+int const size = 5;
+
+
+void insertion(int cq[size], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i = 0; i <= 4; i++)
+	{
+		if(r == size - 1 && f == 0)
+			cout<<"C Queue full !! insertion is not possible\n";
+
+		else if(f - r == 1)
+			cout<<"C Queue full !! insertion is not possible\n";
+
+		else if(r == size - 1 && f > 0)
+		{
+			cout<<"Enter any value : ";
+			cin>>value;
+
+			r = 0;
+			cq[r] = value;
+		}
+
+		else
+		{
+			cout<<"Enter any value : ";
+			cin>>value;
+
+			++r;
+			cq[r] = value;
+		}
+
+		if(f == -1)
+			f = 0;
+	}
+}
+
+void deletion(int cq[size], int &f, int &r)
+{
+	int value, i;
+
+	for(i = 0; i <= 4; i++)
+	{
+		if(f == -1)
+		cout<<"C Queue is empty !! is deletion is not possible \n";
+
+		else if(f == r)
+		{
+			value = cq[f];
+			f = -1;
+			r = -1;
+		}
+
+		else if(f == size - 1 && f > r)
+		{
+			value = cq[f];
+			f = 0;
+		}
+
+		else
+		{
+			value = cq[f];
+			++f;
+		}
+		}
+
+}
+
+void print(int cq[size], int &f, int &r)
+{
+	int i;
+
+	if(f == -1)
+		cout<<"C Queue is empty\n";
+
+	else if(f == r)
+		cout<<cq[r]<<"\n";
+
+	else if(r > f)
+	{
+		for(i = f; i <= r; i++)
+		{
+			cout<<cq[i]<<"\t";
+		}
+		cout<<"\n";
+	}
+
+	else
+	{
+		for(i = f; i <= size - 1; i++)
+		{
+			cout<<cq[i]<<"\t";
+		}
+		for(i = 0; i <= r; i++)
+		{
+			cout<<cq[i]<<"\t";
+		}
+		cout<<"\n";
+	}
+
+}
+
+
+int main()
+{
+	int cq[size];
+	int r = -1;
+	int f = -1;
+
+	insertion(cq, f, r);
+	cout<<endl;
+	print(cq, f, r);
+	cout<<endl;
+	deletion(cq, f, r);
+	print(cq, f, r);
+
+
+    return 0;
+}

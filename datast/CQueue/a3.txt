@@ -1,0 +1,134 @@
+Q/Q1: Given a circular queue of size (8) contain (4) elements, Do the following (using program segment) :
+A) add (5) elements? Then 
+B) Convert the negative values to empty stack of size (5)? Then 
+C) print the final state of the stack? 
+
+------------------------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+int const size1 = 8;
+int const size2 = 5;
+
+void insertio(int cq[size1], int &f, int &r)
+{
+	int value;
+	int i;
+
+	for(i =0; i <= 4; i++)
+	{
+		if(r == 7 && f == 0)
+		{
+			value =cq[f];
+			++f;
+
+			cout<<"Enter any number : ";
+			cin>>value;
+
+			r = 0;
+			cq[r] = value;
+		}
+		else
+		{
+			cout<<"Enter any number : ";
+			cin>>value;
+
+			++r;
+			cq[r] = value;
+		}
+	}
+}
+
+void co_s(int cq[size1], int stack[size2], int &top, int &f, int &r)
+{
+	int i;
+	int value;
+
+	for(i = f; i <= 7; i++)
+	{
+		if(cq[i] < 0)
+		{
+			if(top == 4)
+			{
+				value = stack[top];
+				--top;
+				++top;
+				stack[top] = cq[i];
+			}
+			else
+			{
+				++top;
+				stack[top] = cq[i];
+			}
+		}
+	}
+	for(i = 0; i == r; i++)
+	{
+		if(cq[i] < 0)
+		{
+			if(top == 4)
+			{
+				value = stack[top];
+				--top;
+				++top;
+				stack[top] = cq[i];
+			}
+			else
+			{
+				++top;
+				stack[top] = cq[i];
+			}
+		}
+	}
+}
+
+void printQ(int cq[size1], int f, int r)
+{
+	int i;
+
+	for(i = f; i <= 7; i++)
+	{
+		cout<<cq[i]<<"\t";
+	}
+	for(i = 0; i == r; i++)
+	{
+		cout<<cq[i]<<"\t";
+	}
+}
+
+void prints(int stack[size2], int top)
+{
+	int i;
+
+	for(i = 0; i <= top; i++)
+	{
+		cout<<stack[i]<<"\t";
+	}
+}
+
+
+int main()
+{
+	int cq[size1] = {1, 2, -3, -4};
+	int stack[size2];
+
+	int f = 0;
+	int r = 3;
+	int top = -1;
+
+	insertio(cq, f, r);
+	cout<<"\n";
+
+	co_s(cq, stack, top, f, r);
+	cout<<"\n";
+
+	printQ(cq, f, r);
+	cout<<"\n";
+
+	prints(stack, top);
+	cout<<"\n";
+
+    return 0;
+}
