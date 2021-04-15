@@ -1,0 +1,135 @@
+#include<iostream>
+using namespace std;
+
+int const size = 1;
+
+struct node
+{
+	int info;
+	struct node* next;
+}; typedef struct node* nodeptr;
+
+
+void insertend(nodeptr &plist)
+{
+	nodeptr q, p;
+	int i;
+	q = plist;
+
+	for(i = 0; i <= 12; i++)
+	{
+		for( ; q->next != NULL; )
+		q = q->next;
+
+		p = new node;
+
+		cout<<"Enter any number : ";
+		cin>>p->info;
+
+		p->next = NULL;
+		q->next = p;
+	}
+
+}
+
+void spilt(nodeptr &plist)
+{
+	nodeptr q, p, head1, head2, a, b, c;
+	int i;
+	a = plist;
+
+	cout<<"List 1 : \n";
+	p = new node;
+	p->info = a->info;
+	p->next = NULL;
+	head1 = p;
+	b = head1;
+	cout<<p->info<<"\t";
+
+	a = a->next;
+	for(i = 0; i <= 5; i++)
+	{
+		for( ; b->next != NULL; )
+				b = b->next;
+
+		c = new node;
+		c->info = a->info;
+		cout<<c->info<<"\t";
+		c->next = NULL;
+		b->next = c;
+
+		a = a->next;
+	}
+
+	cout<<"\nList 2 : \n";
+	nodeptr b1, c1;
+	b1 = head2;
+
+	q = new node;
+	q->info = a->info;
+	q->next = NULL;
+	head2 = q;
+	cout<<q->info<<"\t";
+
+	a = a->next;
+
+	for(i = 7; i <= 12; i++)
+	{
+		for( ; b1->next != NULL; )
+				b1 = b1->next;
+
+		c1 = new node;
+		c1->info = a->info;
+		cout<<c1->info<<"\t";
+		c1->next = NULL;
+		b1->next = c1;
+
+		a = a->next;
+	}
+
+
+}
+
+void displaying(nodeptr &plist)
+{
+	nodeptr q;
+
+	if(plist == NULL)
+		cout<<"\nList is Empty\n";
+	else
+	{
+		q = plist;
+
+		for( ; q != NULL; )
+		{
+			cout<<q->info<<"\t";
+			q = q->next;
+		}
+		cout<<"\n";
+	}
+}
+
+int main()
+{
+	nodeptr p, q, plist;
+	int x, y = 0;
+	int array[size + y];
+	p = new node;
+
+	cout<<"Enter any number : ";
+	cin>>p->info;
+	p->next = NULL;
+	plist = p;
+
+	cout<<endl;
+	insertend(plist);
+
+	cout<<endl;
+	displaying(plist);
+
+	cout<<endl;
+	spilt(plist);
+
+
+	return 0;
+}

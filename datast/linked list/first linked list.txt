@@ -1,0 +1,169 @@
+#include<iostream>
+using namespace std;
+
+struct node
+{
+	int info;
+	struct node* next;
+}; typedef struct node* nodeptr;
+
+void insertbegin(nodeptr &plist)
+{
+	nodeptr p;
+	p = new node;
+
+	cout<<"Enter any number : ";
+	cin>>p->info;
+
+	p->next = plist;
+	plist = p;
+}
+
+void insertend(nodeptr &plist)
+{
+	nodeptr q, p;
+	q = plist;
+
+	for( ; q->next != NULL; )
+		q = q->next;
+
+	p = new node;
+
+	cout<<"Enter any number : ";
+	cin>>p->info;
+
+	p->next = NULL;
+	q->next = p;
+}
+
+void ins_betwen(nodeptr &plist)
+{
+    nodeptr p, a, b;
+    int i, L;
+
+    cout << "Enter the number of location : ";
+    cin >> L;
+
+    p = new node;
+
+    cout << "Enter any number : ";
+    cin >> p->info;
+
+    a = plist;
+
+    for (i = 2; i < L; i++)
+        a = a->next;
+
+    b = a->next;
+    a->next = p;
+    p->next = b;
+}
+
+void deletebeg(nodeptr &plist)
+{
+	nodeptr p;
+
+	p = plist;
+	plist = plist->next;
+	free(p);
+}
+
+void deleteend(nodeptr &plist)
+{
+	nodeptr q, p;
+	q = plist;
+	p = plist;
+
+	for( ; q->next != NULL; )
+	{
+		p = q;
+		q = q->next;
+	}
+	p->next = NULL;
+	free(q);
+}
+
+void deletebet(nodeptr &plist)
+{
+	nodeptr p, q, a;
+	int i, l;
+	p = plist;
+	q = plist;
+	a = plist;
+
+	cout << "Enter the number of location : ";
+    cin >> l;
+
+	for(i = 2; i < l; i++)
+	{
+		p = q;
+		q = q->next;
+		a = q->next;
+	}
+
+	q->next = a->next;
+
+	free(a);
+}
+
+void displaying(nodeptr &plist)
+{
+	nodeptr q;
+
+	if(plist == NULL)
+		cout<<"\nList is Empty\n";
+	else
+	{
+		q = plist;
+
+		for( ; q != NULL; )
+		{
+			cout<<q->info<<"\t";
+			q = q->next;
+		}
+		cout<<"\n";
+	}
+}
+
+int main()
+{
+	nodeptr p, q, plist;
+	int x;
+	p = new node;
+
+	cout<<"Enter any number : ";
+	cin>>p->info;
+	p->next = NULL;
+	plist = p;
+
+	cout<<endl;
+	for( ; x != 8; )
+	{
+		cout<<"1- add from begin\n";
+		cout<<"2- add from end\n";
+		cout<<"3- add from between\n";
+		cout<<"4- delete from begin\n";
+		cout<<"5- delete from end\n";
+		cout<<"6- delete from between\n";
+		cout<<"7- print list\n";
+		cout<<"8- exit\n";
+
+		cout<<"Enter your choise : ";
+		cin>>x;
+
+		cout<<endl;
+		switch(x)
+		{
+			case 1:insertbegin(plist); break;
+			case 2:insertend(plist); break;
+			case 3:ins_betwen(plist); break;
+			case 4:deletebeg(plist); break;
+			case 5:deleteend(plist); break;
+			case 6:deletebet(plist); break;
+			case 7:displaying(plist); break;
+			default:cout<<"Error\n";
+		}
+	}
+
+	return 0;
+}
