@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class emp{
+private:
+    string name, city;
+    int age, salary;
+public:
+    static int counter;
+    emp(string name, string city, int age, int salary)
+    {
+        this->name = name;
+        this->city = city;
+        this->age = age;
+        this->salary = salary;
+    }
+
+    void sater_salary()
+    {
+        salary = salary + 1500;
+        cout<<salary<<"\n\n";
+    }
+
+    void print()
+    {
+        cout<<"emp "<<counter<<" info is : "<<"\n";
+        cout<<"Name : "<<name<<"\n";
+        cout<<"city : "<<city<<"\n";
+        cout<<"age : "<<age<<"\n";
+        cout<<"salary : "<<salary<<"\n\n";
+        ++counter;
+    }
+};
+
+int emp::counter = 1;
+
+int main()
+{
+    emp e1("Ali", "Baghdad", 21, 2000);
+    e1.print();
+    emp e2("saja", "Baghdad", 26, 4000);
+    e2.print();
+    emp e3("nabaa", "Baghdad", 22, 3500);
+    e3.print();
+
+    e1.sater_salary();
+    e2.sater_salary();
+    e3.sater_salary();
+
+
+    return 0;
+}

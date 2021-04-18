@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class unvirste;
+
+class student{
+private:
+    string name;
+    string branich;
+    int age;
+public:
+    student(string name, string branich, int age)
+    {
+        this->name = name;
+        this->branich = branich;
+        this->age = age;
+    }
+
+    friend class unvirste;
+};
+
+class unvirste{
+private:
+
+public:
+    void print(student &s1)
+    {
+        cout<<s1.name<<"\n";
+        cout<<s1.branich<<"\n";
+        cout<<s1.age<<"\n";
+    }
+
+};
+
+int main()
+{
+    student s1("Ali", "WN", 22);
+    unvirste u1;
+
+    u1.print(s1);
+
+    return 0;
+}

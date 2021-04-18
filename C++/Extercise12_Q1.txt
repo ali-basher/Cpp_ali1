@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class car{
+private:
+    string type, color;
+    int number, year, price;
+public:
+    car(string type, string color, int number, int year, int price)
+    {
+        this->type = type;
+        this->color = color;
+        this->number = number;
+        this->year = year;
+        this->price = price;
+    }
+
+    void print();
+    friend void pricepluse(car &c1);
+};
+
+void car::print()
+{
+    cout<<"The car info : \n\n";
+    cout<<"type :"<<type<<"\n";
+    cout<<"color :"<<color<<"\n";
+    cout<<"number :"<<number<<"\n";
+    cout<<"year :"<<year<<"\n";
+    cout<<"price :"<<price<<"\n";
+}
+
+void pricepluse(car &c1)
+{
+    c1.price = c1.price + 1000;
+
+    cout<<"Price pulse is : "<<c1.price<<"\n";
+}
+
+int main()
+{
+    car c1("BMW", "Black", 23498, 2020, 45000);
+
+    c1.print();
+
+    pricepluse(c1);
+
+    return 0;
+}
