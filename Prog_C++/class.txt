@@ -1,0 +1,420 @@
+
+--------------------------------------------
+frined fun whith class
+--------------------------------------------
+
+#include<iostream>
+using namespace std;
+
+class worker;
+class emp {
+private:
+    string name;
+    float salary;
+
+public:
+    emp()
+    {
+        cout<<"Enter info emp : ";
+        cin>>name>>salary;
+    }
+    friend void sum(emp e1, worker w1);
+
+};
+
+class worker{
+private:
+    string name;
+    float salary;
+
+public:
+    worker()
+    {
+        cout<<"Enter info worker : ";
+        cin>>name>>salary;
+    }
+
+    friend void sum(emp e1, worker w1);
+
+};
+
+void sum(emp e1, worker w1)
+{
+    float sum=0;
+    sum=e1.salary + w1.salary;
+    cout<<sum<<"\n";
+}
+
+
+int main()
+{
+    emp e1;
+    worker w1;
+
+    sum(e1, w1);
+
+    return 0;
+
+}
+
+--------------------------------------------
+frined class
+--------------------------------------------
+
+#include<iostream>
+using namespace std;
+
+class worker;
+class a;
+class emp {
+private:
+    string name;
+    float salary;
+
+public:
+    emp()
+    {
+        cout<<"Enter info emp : ";
+        cin>>name>>salary;
+    }
+
+    void print()
+    {
+         cout<<"salary : "<<salary<<"\n";
+    }
+
+friend class a;
+
+};
+
+class worker{
+private:
+    string name;
+    float salary;
+
+public:
+    worker()
+    {
+        cout<<"Enter info worker : ";
+        cin>>name>>salary;
+    }
+     void print()
+    {
+         cout<<"salary : "<<salary<<"\n";
+    }
+friend class a;
+};
+
+class a{
+private:
+public:
+    void ali(emp &e1, worker &w1 )
+    {
+        e1.salary+=3000;
+        w1.salary+=2000;
+
+    }
+
+};
+
+
+
+int main()
+{
+    emp e1;
+    worker w1;
+    a as;
+    as.ali(e1, w1);
+
+    e1.print();
+    w1.print();
+
+
+
+    return 0;
+
+}
+
+
+
+
+-----------------------------------------------------------
+class with array
+-----------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+class student {
+private:
+    string name;
+    int age;
+    float deg1, deg2, deg3;
+
+public:
+    student()
+    {
+        cout << "Enter information : \n---------------------------------------------------------------------------\n";
+        cout << "Enter your name : ";
+        cin >> name;
+        cout << "Enter your age : ";
+        cin >> age;
+        cout << "Enter your degree 1 : ";
+        cin >> deg1;
+        cout << "Enter your degree 2 : ";
+        cin >> deg2;
+        cout << "Enter your degree 3 : ";
+        cin >> deg3;
+        cout << "\n";
+    }
+
+    void print()
+    {
+        cout << "The information : \n---------------------------------------------------------------------------\n";
+        cout << "Your name : " << name << "\n";
+        cout << "Your age : " << age << "\n";
+        cout << "Your degree 1 : " << deg1 << "\n";
+        cout << "Your degree 2 : " << deg2 << "\n";
+        cout << "Your degree 3 : " << deg3 << "\n";
+        cout << "\n";
+    }
+};
+
+int main()
+{
+    student s[3];
+
+    for (int i = 0; i < 3; i++)
+    {
+        s[i].print();
+    }
+
+
+
+    return 0;
+}
+
+
+----------------------------------------------------------
+classs with array & frinde function
+----------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+class student {
+private:
+    string name;
+    int age;
+    float deg1, deg2, deg3;
+
+public:
+    student()
+    {
+        cout << "Enter information : \n---------------------------------------------------------------------------\n";
+        cout << "Enter your name : ";
+        cin >> name;
+        cout << "Enter your age : ";
+        cin >> age;
+        cout << "Enter your degree 1 : ";
+        cin >> deg1;
+        cout << "Enter your degree 2 : ";
+        cin >> deg2;
+        cout << "Enter your degree 3 : ";
+        cin >> deg3;
+        cout << "\n";
+    }
+
+    friend void print(student s[3]);
+};
+
+void print(student s[3])
+{
+
+    for(int i=0;i<3;i++)
+    {
+       cout<<endl;
+       cout<<s[i].name<<"\n";
+       cout<<s[i].age<<"\n";
+       cout<<s[i].deg1<<"\n";
+       cout<<s[i].deg2<<"\n";
+       cout<<s[i].deg3<<"\n";
+       cout<<endl;
+    }
+
+}
+
+
+int main()
+{
+    student s[3];
+
+    print(s);
+
+    return 0;
+}
+
+
+-------------------------------------------------------------------
+class with array & frinde class
+-------------------------------------------------------------------
+
+#include<iostream>
+using namespace std;
+
+class worker;
+class a;
+class emp {
+private:
+    string name;
+    float salary;
+public:
+    emp()
+    {
+        cout<<"Enter info emp : ";
+        cin>>name>>salary;
+    }
+    void print()
+    {
+         cout<<"salary of emp : "<<salary<<"\n";
+    }
+friend class a;
+};
+
+class worker{
+private:
+    string name;
+    float salary;
+public:
+    worker()
+    {
+        cout<<"Enter info worker : ";
+        cin>>name>>salary;
+    }
+     void print()
+    {
+         cout<<"salary of worker : "<<salary<<"\n";
+    }
+friend class a;
+};
+
+class a{
+private:
+public:
+    void ali(emp e1[3], worker w1[3] )
+    {
+        for(int i=0;i<3;i++)
+        {
+             e1[i].salary+=3000;
+            w1[i].salary+=2000;
+        }
+    }
+};
+
+int main()
+{
+    emp e1[3];
+    worker w1[3];
+    a as;
+    as.ali(e1, w1);
+
+     for(int i=0;i<3;i++)
+        {
+            cout<<endl;
+            e1[i].print();
+            w1[i].print();
+            cout<<endl;
+        }
+
+    return 0;
+}
+
+------------------------------------------------
+class && array && friend fun
+------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+class student
+{
+private:
+    string name;
+    int age;
+    float deg1, deg2, deg3;
+
+public:
+    student()
+    {
+        cout << "Enter information : \n---------------------------------------------------------------------------\n";
+        cout << "Enter your name : ";
+        cin >> name;
+        cout << "Enter your age : ";
+        cin >> age;
+        cout << "Enter your degree 1 : ";
+        cin >> deg1;
+        cout << "Enter your degree 2 : ";
+        cin >> deg2;
+        cout << "Enter your degree 3 : ";
+        cin >> deg3;
+        cout << "\n";
+    }
+
+    void print()
+    {
+        cout << "The information : \n---------------------------------------------------------------------------\n";
+        cout << "Your name : " << name << "\n";
+        cout << "Your age : " << age << "\n";
+        cout << "Your degree 1 : " << deg1 << "\n";
+        cout << "Your degree 2 : " << deg2 << "\n";
+        cout << "Your degree 3 : " << deg3 << "\n";
+        cout << "\n";
+    }
+
+    friend void avg(student s[3]);
+};
+
+void avg(student s[3])
+{
+    int i, sum = 0;
+
+    for(i = 0; i < 3; i++)
+    {
+        sum = s[i].deg1 + s[i].deg2 + s[i].deg3;
+
+        cout<<"avg student "<<i+1<<" is : "<<sum / 3.0<<"\n";
+    }
+}
+
+int main()
+{
+    student s[3];
+
+    for (int i = 0; i < 3; i++)
+    {
+        s[i].print();
+    }
+
+    avg(s);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+jar cfm myTest.jar manifest.txt myTest.class
+
+
+
+Manifest File Contains following:
+main-class: myTest
+
+
+To Run:
+java -jar myTest.jar

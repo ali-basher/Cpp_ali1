@@ -1,0 +1,38 @@
+<html>
+    <head>
+    </head>
+    <body>
+        
+        <input id="txtTest" type="text" style="width:600px;">
+        <div id="msg"></div>
+        
+        <script>
+            var myText = document.getElementById("txtTest");
+            
+            myText.onkeydown = function () {
+                "use strict";
+                document.getElementById("msg").innerHTML = event.which + "  "  + String.fromCharCode(event.which);
+                //if (event.keys === "enter") {
+                  //  document.getElementById("msg").innerHTML = "You Press On Enter Button";
+                //}
+            };
+            
+            var txtName = "      Ahmed Mahmoud     Hassouna Ahmed       ";
+            var text = txtName.trim();
+            myText.value = text;
+            
+            function generateYears(Start, End) {
+                "use strict";
+                document.write("<select>");
+                var x;
+                for (x = Start; x <= End; x += 1) {                    
+                    document.write("<option value=\"" + x + "\">" + x + "</option>");
+                }
+                document.write("</select>");                                
+            }
+
+            generateYears(1900, 2015);
+        </script>
+    </body>
+</html>
+    

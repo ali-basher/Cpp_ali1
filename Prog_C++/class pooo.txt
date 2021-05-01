@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+int const size = 3;
+
+class student{
+private:
+    string name;
+    string branch;
+    int laval;
+    int oopDeg;
+public:
+    student(string name, string branch, int laval, int oopDeg)
+    {
+        this ->name=name;
+        this ->branch=branch;
+        this ->laval=laval;
+        this ->oopDeg=oopDeg;
+    }
+
+    void print()
+    {
+        cout<<name<<"\t"<<branch<<"\t"<<laval<<"\t"<<oopDeg<<"\n";
+    }
+
+    int getdeg()
+    {
+        return oopDeg;
+    }
+};
+
+
+int main()
+{
+    student s[size] = { student("Ali", "NW", 2, 92),
+                        student("Saja", "NW", 2, 100),
+                        student("nabaa", "NW", 2, 69),
+    };
+    cout<<"\n";
+    for(int i=0; i<size; i++)
+    {
+       s[i].print();
+    }
+    int max;
+    max=s[0].getdeg();
+    for(int i=0; i<size; i++)
+    {
+        if(max<s[i].getdeg())
+            max=s[i].getdeg();
+    }
+    cout<<max<<"\n";
+
+    return 0;
+}

@@ -1,0 +1,87 @@
+#include<iostream>
+using namespace std;
+
+class product{
+private:
+    string name, date;
+    float price;
+
+public:
+
+product()
+{
+    cout<<"Enter product information :\n___________________________________\n";
+    cout<<"Enter product name : ";
+    cin>>name;
+    cout<<"Enter product price : ";
+    cin>>price;
+    cout<<"Enter date of production : ";
+    cin>>date;
+}
+
+void show()
+{
+    cout<<"The product information :\n___________________________________\n";
+    cout<<"The product name : "<<name<<"\n";
+    cout<<"The product price : "<<price<<" $\n";
+    cout<<"The date of production : "<<date<<"\n";
+}
+
+string getName()
+{
+    return name;
+}
+
+float getPrice()
+{
+    return price;
+}
+
+string getDate()\
+{
+    return date;
+}
+
+void setprice(float p)
+{
+    price=p;
+}
+
+friend void testprice(product pro, product p);
+
+friend void sumprice(product pro, product p);
+
+};
+
+void testprice(product pro, product p)
+{
+     if(pro.price>p.price)
+        cout<<pro.name<<"\n";
+    else
+        cout<<p.name<<"\n";
+}
+
+void sumprice(product pro, product p)
+{
+    float totele;
+    totele=pro.price+p.price;
+    cout<<"Sum = "<<totele<<"\n";
+}
+
+int main()
+{
+    product pro,p;
+    cout<<"\n_______________________________________________________________________________\n\n";
+    pro.show();
+    p.show();
+    p.setprice(10);
+    pro.show();
+    p.show();
+
+    testprice(pro, p);
+    sumprice(pro, p);
+
+
+
+    return 0;
+}

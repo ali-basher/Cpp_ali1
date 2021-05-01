@@ -1,0 +1,5 @@
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/java/jdk1.8.0_77/bin/java" 1
+
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/java/jdk1.8.0_77/bin/javac" 1
+
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/java/jdk1.8.0_77/bin/javaws" 1
