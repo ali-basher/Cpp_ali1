@@ -1,0 +1,40 @@
+package java1;
+
+import java.util.*;
+
+public class age{
+	
+	static Scanner input = new Scanner(System.in).useLocale(Locale.US);
+	
+	public static void main(String[] agrs)
+	{
+		int i;
+		int[] a = new int[5];
+		ArrayList<Integer> b = new ArrayList<Integer>();
+		ArrayList<Integer> c = new ArrayList<Integer>();
+		
+		for(i = 0; i < 5; i++)
+		{
+			System.out.print("Enter any number : ");
+			a[i] = input.nextInt();
+			
+			if(a[i] % 2 == 0)
+			{
+				b.add(a[i]);
+			}
+			
+			else
+			{
+				c.add(a[i]);
+			}
+		}
+		
+		for(i = 0; i < 5; i++)
+		{
+			System.out.print(a[i] + " ");
+		}
+		
+		System.out.println("\n" + b);
+		System.out.println(c);
+	}
+}

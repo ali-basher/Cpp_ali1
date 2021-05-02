@@ -1,0 +1,39 @@
+package java1;
+
+import java.util.*;
+
+public class age{
+	
+	static Scanner input = new Scanner(System.in).useLocale(Locale.US);
+	
+	public static void main(String[] agrs)
+	{
+		int i, j, item;
+		int[] num = new int[7];
+		
+		for(i = 0; i < 6; i++)
+		{
+			System.out.print("Enter any number : ");
+			num[i] = input.nextInt();
+		}
+		
+		for(i = 0; i < 6; i++)
+		{
+			for(j =i; j < 6; j++)
+			{
+				if(num[j] < num[i])
+				{
+					item = num[j];
+					num[j] = num[i];
+					num[i] = item;
+				}
+			}
+		}
+		
+		for(i = 0; i < 6; i++)
+		{
+			System.out.println(num[i]);	
+		}
+	}
+	
+}

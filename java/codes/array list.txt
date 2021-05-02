@@ -1,0 +1,31 @@
+package java1;
+
+import java.util.*;
+
+public class age{
+	
+	static Scanner input = new Scanner(System.in).useLocale(Locale.US);
+	
+	public static void main(String[] agrs)
+	{
+		int i;
+		String x;
+
+		ArrayList<String> num = new ArrayList<String>();
+		
+		for(i = 0; i < 3; i++)
+		{
+			System.out.print("Enter any number : ");
+			x = input.next();
+			
+			num.add(x);
+		}
+		
+		System.out.println(num);
+		
+		for(i = 0; i < 3; i++)
+		{
+			System.out.println(num.get(i));
+		}
+	}
+}

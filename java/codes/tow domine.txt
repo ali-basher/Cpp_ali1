@@ -1,0 +1,33 @@
+package java1;
+
+import java.util.*;
+
+public class age{
+	
+	static Scanner input = new Scanner(System.in).useLocale(Locale.US);
+	
+	public static void main(String[] agrs)
+	{
+		int i, j;
+		int[][] a = new int[3][2];
+		
+		for(i = 0; i < 3; i++)
+		{
+			for(j = 0; j < 2; j++)
+			{
+				System.out.print("Enter a[ " + i + " ] [ " + j + " ] = ");
+				a[i][j] = input.nextInt();
+			}	
+		}
+		
+		for(i = 0; i < 3; i++)
+		{
+			for(j = 0; j < 2; j++)
+			{
+				System.out.print(a[i][j] + " ");
+				
+			}
+			System.out.print("\n");
+		}
+	}
+}
