@@ -1,0 +1,21 @@
+package java1;
+
+import java.io.FileWriter;
+import java.util.*;
+
+public class age{
+	
+	static Scanner input = new Scanner(System.in).useLocale(Locale.US);
+	
+	public static void main(String[] agrs)
+	{
+		try {
+			FileWriter fout = new FileWriter("test.txt");
+			fout.write("first my file is i am ali basher");
+			fout.close();
+		} 
+		catch (Exception ex) {
+			
+		}
+	}
+}
