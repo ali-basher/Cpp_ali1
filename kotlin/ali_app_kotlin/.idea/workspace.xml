@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf54b080-cc7e-4ee9-a8ff-94f561ceace4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/convertDataTypes.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inputs.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/math operation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/math priorites.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/findMyAge.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ali_app_kotlin/META-INF/ali_app_kotlin.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ali_app_kotlin/META-INF/ali_app_kotlin.kotlin_module" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +40,16 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Math_prioritesKt">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.FindMyAgeKt">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,6 +62,19 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="ConvertDataTypesKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FindMyAgeKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="ali_app_kotlin" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="FindMyAgeKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,26 +119,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Null_safetyKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="ali_app_kotlin" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Null_safetyKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FindMyAgeKt" />
         <item itemvalue="Application.Math_prioritesKt" />
         <item itemvalue="Application.Math_operationKt" />
         <item itemvalue="Application.ConvertDataTypesKt" />
         <item itemvalue="Application.InputsKt" />
-        <item itemvalue="Application.Null_safetyKt" />
       </list>
     </recent_temporary>
   </component>
@@ -144,6 +142,7 @@
       <workItem from="1620393301370" duration="4056000" />
       <workItem from="1620436978358" duration="603000" />
       <workItem from="1620461364526" duration="4079000" />
+      <workItem from="1620473005786" duration="1683000" />
     </task>
     <servers />
   </component>
