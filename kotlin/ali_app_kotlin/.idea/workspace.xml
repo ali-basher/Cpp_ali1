@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf54b080-cc7e-4ee9-a8ff-94f561ceace4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/findMyAge.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/For loop.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IF Else.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IF ElseIF.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic operations.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Loop Control.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simple IF.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Strings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/when_.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/while_do_while_loop.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/ff.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ali_app_kotlin/META-INF/ali_app_kotlin.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ali_app_kotlin/META-INF/ali_app_kotlin.kotlin_module" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,80 +58,80 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.FindMyAgeKt">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConvertDataTypesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Loop_ControlKt">
+    <configuration name="For_loopKt" type="JetRunConfigurationType" nameIsGenerated="true">
       <module name="ali_app_kotlin" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ConvertDataTypesKt" />
+      <option name="MAIN_CLASS_NAME" value="For_loopKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindMyAgeKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="IF_ElseIFKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="ali_app_kotlin" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="FindMyAgeKt" />
+      <option name="MAIN_CLASS_NAME" value="IF_ElseIFKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InputsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="Loop_ControlKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="ali_app_kotlin" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="InputsKt" />
+      <option name="MAIN_CLASS_NAME" value="Loop_ControlKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Math_operationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="WhenKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="ali_app_kotlin" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Math_operationKt" />
+      <option name="MAIN_CLASS_NAME" value="WhenKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Math_prioritesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="When_Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="ali_app_kotlin" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Math_prioritesKt" />
+      <option name="MAIN_CLASS_NAME" value="When_Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="While_do_while_loopKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="ali_app_kotlin" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="While_do_while_loopKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FindMyAgeKt" />
-        <item itemvalue="Application.Math_prioritesKt" />
-        <item itemvalue="Application.Math_operationKt" />
-        <item itemvalue="Application.ConvertDataTypesKt" />
-        <item itemvalue="Application.InputsKt" />
+        <item itemvalue="Application.Loop_ControlKt" />
+        <item itemvalue="Application.While_do_while_loopKt" />
+        <item itemvalue="Application.When_Kt" />
+        <item itemvalue="Application.WhenKt" />
+        <item itemvalue="Application.IF_ElseIFKt" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +160,22 @@
       <workItem from="1620393301370" duration="4056000" />
       <workItem from="1620436978358" duration="603000" />
       <workItem from="1620461364526" duration="4079000" />
-      <workItem from="1620473005786" duration="1683000" />
+      <workItem from="1620473005786" duration="2484000" />
+      <workItem from="1620476710708" duration="220000" />
+      <workItem from="1620477157134" duration="857000" />
+      <workItem from="1620678462777" duration="5967000" />
+      <workItem from="1620731876178" duration="2053000" />
+      <workItem from="1620734403016" duration="738000" />
+      <workItem from="1620741061136" duration="935000" />
+      <workItem from="1620755900224" duration="1098000" />
+      <workItem from="1620823804316" duration="2470000" />
+      <workItem from="1620846074952" duration="4296000" />
+      <workItem from="1620871685012" duration="4167000" />
+      <workItem from="1620894698606" duration="2730000" />
+      <workItem from="1620901658384" duration="1086000" />
+      <workItem from="1620918724864" duration="1296000" />
+      <workItem from="1620937074151" duration="4506000" />
+      <workItem from="1620989604623" duration="80000" />
     </task>
     <servers />
   </component>
