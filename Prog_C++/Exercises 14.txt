@@ -1,0 +1,44 @@
+Q1/ Q1: Write an object-oriented program in C++ that overload the + operator 
+to concatenate two strings.
+-----------------------------------------------------------------------
+
+#include <iostream>
+
+using namespace std;
+
+class myString{
+
+private:
+    string a;
+public:
+    myString(string a){
+        this->a = a;
+    }
+
+    void print(){
+        cout<<a<<"\n";
+    }
+
+    myString operator +(myString s2){
+        string sumstring = a + " " + s2.a;
+
+        myString temp(sumstring);
+
+        return temp;
+    }
+};
+
+int main(){
+
+    myString s1("Ali");
+    myString s2("Basher");
+
+    s1.print();
+    s2.print();
+
+    myString s3 = s1 + s2;
+
+    s3.print();
+
+    return 0;
+}
