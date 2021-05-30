@@ -42,3 +42,53 @@ int main(){
 
     return 0;
 }
+
+-------------------------------------------------------------------------------
+
+#include <iostream>
+#include<math.h>
+
+using namespace std;
+
+class test{
+private:
+    int a;
+public:
+    test(int a){
+        this->a = a;
+    }
+
+    void print(){
+        cout<<a<<"\n";
+    }
+
+    test operator ^(test t2){
+
+        int power = pow(a, t2.a);
+
+        cout<<a<<" ^ "<<t2.a<<" : ";
+
+        test temp(power);
+
+        return temp;
+    }
+};
+
+int main(){
+
+    test t1(2);
+    test t2(3);
+
+    t1.print();
+    t2.print();
+
+    test t3= t1 ^ t2;
+
+    t3.print();
+
+
+
+
+    return 0;
+}
+
